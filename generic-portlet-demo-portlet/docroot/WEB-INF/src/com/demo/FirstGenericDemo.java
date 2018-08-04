@@ -30,12 +30,12 @@ public class FirstGenericDemo extends GenericPortlet {
     	 String redirect = ParamUtil.getString(renderRequest,"redirect");
     	 
     	 if(redirect.equalsIgnoreCase("greeting")) {
-    		 System.out.println("redirecting");
     		include("/html/firstgenericdemo/greeting.jsp", renderRequest, renderResponse);
+    		
     	 }
     	
     	 else {
-            include(viewTemplate, renderRequest, renderResponse);
+    		include(viewTemplate, renderRequest, renderResponse);
     	 }
 
 
@@ -44,7 +44,8 @@ public class FirstGenericDemo extends GenericPortlet {
     /*
     @Override
     //This method is called every time that any <portlet:actionURL/> is triggered
-    //if implemented this will be the only method that process all the actions
+    //if Override, this  will be the only method that process all the actions
+    //this method is called as defined on the interface every time response is used.
     
     public void processAction(ActionRequest request, ActionResponse response ) throws IOException, PortletException {
     	String name = (String) request.getParameter("name");
@@ -55,11 +56,12 @@ public class FirstGenericDemo extends GenericPortlet {
     */
     
     @ProcessAction(name="MyActionMethod")	
-    //This method is called when a <portlet:actionURL name="MyActionMethod"/> if processAction is no implemented
+    //This method is called when a <portlet:actionURL name="MyActionMethod"/> if processAction is not override
     public void MyActionMethod(ActionRequest request, ActionResponse response ) throws IOException, PortletException {
     	String name = (String) request.getParameter("name");
     	String surname = (String) request.getParameter("surname");
     	System.out.println("Especific Action the name is "+ name +" " + surname);
+    	
     }
     
     
