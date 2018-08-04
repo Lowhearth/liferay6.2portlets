@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+<%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
 
 <portlet:defineObjects />
 
@@ -12,11 +13,11 @@
 </portlet:renderURL>
 
 
-<form action="${myaction}" method="POST">
+<aui:form action="${myaction}" method="POST">
 	
-	Name: 	<input type="text" name ="name"/> <br>
-	Surname:<input type="text" name="surname"/> <br>
-	<input type="submit" value = "SUBMIT">
+	<aui:input type="text" name ="name"/> 
+	<aui:input type="text" name="surname" label="Surname"/> 
+	<aui:input type="submit" value = "SUBMIT" name="submit" label=""></aui:input>
 	
-</form>
+</aui:form>
 <a href="${myRenderURL}">Click for Greetings</a>

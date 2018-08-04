@@ -20,6 +20,7 @@ public class FirstMVCDemo extends MVCPortlet {
 			String surname = (String) request.getParameter("surname");
 			System.out.println("The name is" + name+ surname);
 			response.setRenderParameter("jspPage", "/html/firstmvcdemo/greeting.jsp");
+			response.setRenderParameter("name", name);
 			
 	}
 
